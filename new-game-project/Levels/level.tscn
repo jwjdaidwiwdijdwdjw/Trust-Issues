@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bffs0yqr2jdrx"]
 
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_s41d2"]
+[ext_resource type="PackedScene" uid="uid://cec3fxdpqm44e" path="res://Players/Player3D.tscn" id="2_gtnvv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_33cd3"]
 size = Vector3(15, 1, 15)
@@ -23,3 +24,6 @@ shape = SubResource("BoxShape3D_33cd3")
 transform = Transform3D(15.0397215, 0, 0, 0, 1, 0, 0, 0, 15.092531, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_54b6e")
 mesh = SubResource("BoxMesh_6rob7")
+
+[node name="CharacterBody3D" parent="." unique_id=241282218 instance=ExtResource("2_gtnvv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.6972227, 0)
