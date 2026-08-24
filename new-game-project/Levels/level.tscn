@@ -54,4 +54,4 @@ light_volumetric_fog_energy = 0.0
 shadow_enabled = true
 
 [node name="house" parent="." unique_id=1171032628 instance=ExtResource("3_wav5q")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -16.595633, 5.1100082, -44.68373)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -16.5864, 5.0944695, -44.70083)

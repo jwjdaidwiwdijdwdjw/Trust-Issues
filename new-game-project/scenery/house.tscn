@@ -1,5 +1,7 @@
 [gd_scene format=4 uid="uid://6u5wblte280y"]
 
+[ext_resource type="PackedScene" uid="uid://c60fmh6v01fj1" path="res://ladder.tscn" id="1_3fs81"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sy2ny"]
 resource_name = "Material"
 cull_mode = 2
@@ -109,3 +111,6 @@ light_energy = 2.1
 light_indirect_energy = 16.0
 light_volumetric_fog_energy = 1.14
 shadow_enabled = true
+
+[node name="ladder" parent="." unique_id=2035143691 instance=ExtResource("1_3fs81")]
+transform = Transform3D(0.9902058, -0.13961513, 0, 0.13961513, 0.9902058, 0, 0, 0, 1, -0.63829327, -1.5854192, 0)
