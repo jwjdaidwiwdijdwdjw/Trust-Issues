@@ -6,6 +6,8 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6rob7"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_6rob7"]
+lightmap_size_hint = Vector2i(17, 14)
+add_uv2 = true
 
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=241282218]
 script = ExtResource("1_rh44f")
