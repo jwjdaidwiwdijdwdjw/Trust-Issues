@@ -2,7 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_s41d2"]
 [ext_resource type="PackedScene" uid="uid://cec3fxdpqm44e" path="res://Players/Player3D.tscn" id="2_gtnvv"]
-[ext_resource type="PackedScene" uid="uid://6u5wblte280y" path="res://scenery/house.tscn" id="3_wav5q"]
+[ext_resource type="PackedScene" uid="uid://l1cooncvs4o2" path="res://Materials/house.tscn" id="3_wav5q"]
+[ext_resource type="PackedScene" uid="uid://bu34fxq5y3p5x" path="res://Materials/table.tscn" id="4_xto7t"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gtnvv"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -46,12 +47,8 @@ mesh = SubResource("BoxMesh_6rob7")
 [node name="CharacterBody3D" parent="." unique_id=241282218 instance=ExtResource("2_gtnvv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.6972227, 0)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=751172935]
-transform = Transform3D(1, 0, 0, 0, 0.72630584, 0.6873717, 0, -0.6873717, 0.72630584, 0.13524628, 46.37738, 58.234093)
-light_energy = 0.875
-light_indirect_energy = 0.875
-light_volumetric_fog_energy = 0.0
-shadow_enabled = true
-
 [node name="house" parent="." unique_id=1171032628 instance=ExtResource("3_wav5q")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -16.5864, 5.0944695, -44.70083)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 31.216702, 5.2452493, -44.76306)
+
+[node name="table" parent="." unique_id=2002123743 instance=ExtResource("4_xto7t")]
+transform = Transform3D(-1.1419028e-07, 0, 2.5564716, 0, 3.04, 0, -2.612369, 0, -1.1174693e-07, 22.912022, 3.5070226, -41.247646)

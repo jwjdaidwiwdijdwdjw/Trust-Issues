@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bnx05pq04a0pi"]
+
+[ext_resource type="PackedScene" uid="uid://cl5qg7i0e330w" path="res://glb_models/cult_asset_pack.glb" id="1_v33im"]
+
+[node name="cult" unique_id=79967294 instance=ExtResource("1_v33im")]

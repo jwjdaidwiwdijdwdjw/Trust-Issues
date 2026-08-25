@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bysvb36fbk0ji"]
+
+[ext_resource type="PackedScene" uid="uid://3s3f1584qgy" path="res://Materials/ghoul.tscn" id="1_xkrrp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_33cd3"]
+radius = 50.094727
+height = 211.90063
+
+[node name="skeleghost" type="CharacterBody3D" unique_id=590667987]
+
+[node name="Sketchfab_Scene" parent="." unique_id=148473920 instance=ExtResource("1_xkrrp")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1850341272]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 118.177124, 0)
+shape = SubResource("CapsuleShape3D_33cd3")

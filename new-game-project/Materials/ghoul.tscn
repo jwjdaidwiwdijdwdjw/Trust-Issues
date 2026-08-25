@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://3s3f1584qgy"]
+
+[ext_resource type="PackedScene" uid="uid://ci402h72kppgb" path="res://glb_models/ghoul.glb" id="1_hc5h2"]
+
+[node name="Sketchfab_Scene" unique_id=148473920 instance=ExtResource("1_hc5h2")]
+
+[node name="Skeleton3D" parent="Sketchfab_model/d531d3a6042049baad56ab4169ee508f_fbx/Object_2/RootNode/Ghoul_rig/Object_10" parent_id_path=PackedInt32Array(1800955465) index="0" unique_id=2011722424]
+bones/1/position = Vector3(0, 86.96743, -15.1137)
+bones/8/rotation = Quaternion(-0.44679025, -0.3037486, -0.5891029, 0.60089356)
+bones/9/rotation = Quaternion(0.32773635, -0.24286872, -0.004061178, 0.91300994)
+bones/10/rotation = Quaternion(0.39878082, -0.007312344, 0.19687441, 0.89563435)
+bones/13/rotation = Quaternion(0.49931937, 0.21821865, -0.546918, 0.63556397)
+bones/14/rotation = Quaternion(-0.32461384, 0.27382815, -0.0038304408, 0.9053338)
+bones/15/rotation = Quaternion(-0.52117497, 0.07306951, 0.13532877, 0.8394782)
+
+[node name="l_wrist_IK" parent="Sketchfab_model/d531d3a6042049baad56ab4169ee508f_fbx/Object_2/RootNode/Ghoul_rig/Object_10" parent_id_path=PackedInt32Array(1800955465) index="5" unique_id=220594150]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.70644, 149.5891, 83.22689)
+
+[node name="r_wrist_IK" parent="Sketchfab_model/d531d3a6042049baad56ab4169ee508f_fbx/Object_2/RootNode/Ghoul_rig/Object_10" parent_id_path=PackedInt32Array(1800955465) index="6" unique_id=695175401]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.82532, 151.9784, 79.7459)
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=862887641]
+autoplay = &"Ghoul"
