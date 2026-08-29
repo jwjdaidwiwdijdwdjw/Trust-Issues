@@ -30,27 +30,88 @@ height = 0.19140625
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c8h10"]
 albedo_texture = ExtResource("3_ifuhg")
 
+[sub_resource type="Animation" id="Animation_5ib4o"]
+resource_name = "Close"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hinge:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5707963, 0), Vector3(0, 1.1920929e-07, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_75m6d"]
+resource_name = "Open"
+length = 0.5
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hinge:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 2,
+"values": [Vector3(0, 1.4901161e-07, 0), Vector3(0, -1.5707963, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ifuhg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hinge:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.4901161e-07, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5ib4o"]
+_data = {
+&"Close": SubResource("Animation_5ib4o"),
+&"Open": SubResource("Animation_75m6d"),
+&"RESET": SubResource("Animation_ifuhg")
+}
+
 [node name="Door" type="Node3D" unique_id=1931128766]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=788489785]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0017547607, -0.25268555, -0.0056197047)
+[node name="Hinge" type="Node3D" parent="." unique_id=1988210122]
+transform = Transform3D(1, 0, 1.4901161e-07, 0, 1, 0, -1.4901161e-07, 0, 1, -1.8576717, 0, 0)
+
+[node name="Door" type="MeshInstance3D" parent="Hinge" unique_id=788489785]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 1.8594265, -0.25268555, -0.005619379)
 material_override = SubResource("StandardMaterial3D_f33lw")
 mesh = SubResource("BoxMesh_6rob7")
 
-[node name="Handle" type="Node3D" parent="." unique_id=1145208325]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9731498, 0, 0)
+[node name="Handle" type="Node3D" parent="Hinge" unique_id=895174367]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 3.4784086, 0, 6.081843e-07)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Handle" unique_id=1761235583]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1.5385776, -0.19411993, 0.014175415)
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Hinge/Handle" unique_id=1761235583]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.0021533966, -0.005190134, -0.008605242)
 material_override = SubResource("StandardMaterial3D_5ib4o")
 mesh = SubResource("CylinderMesh_6rob7")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Handle" unique_id=186483875]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1.5367622, -0.19718182, -0.34859407)
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Hinge/Handle" unique_id=186483875]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.00033807755, -0.008252025, -0.37137473)
 material_override = SubResource("StandardMaterial3D_xpuf2")
 mesh = SubResource("CylinderMesh_33cd3")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="Handle" unique_id=1537599867]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1.5367622, -0.19718182, 0.40556598)
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Hinge/Handle" unique_id=1537599867]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.00033807755, -0.008252025, 0.38278532)
 material_override = SubResource("StandardMaterial3D_c8h10")
 mesh = SubResource("CylinderMesh_33cd3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1317861328]
+libraries/ = SubResource("AnimationLibrary_5ib4o")
