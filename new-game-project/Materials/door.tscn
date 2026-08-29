@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cqpsxbx77u6q1"]
+
+[ext_resource type="Texture2D" uid="uid://vesrcl0ervkh" path="res://Textures/door.jpg" id="1_3k0d6"]
+[ext_resource type="Texture2D" uid="uid://cxkufsh4yb547" path="res://glb_models/carpet_0.png" id="2_75m6d"]
+[ext_resource type="Texture2D" uid="uid://ct2r3qfo67sp6" path="res://glb_models/cult_asset_pack_8.png" id="3_ifuhg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f33lw"]
+albedo_texture = ExtResource("1_3k0d6")
+uv1_scale = Vector3(3.005, 1.97, 10.165)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6rob7"]
+size = Vector3(3.7042236, 5.5493164, 0.2659912)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ib4o"]
+albedo_texture = ExtResource("2_75m6d")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_6rob7"]
+top_radius = 0.12207031
+bottom_radius = 0.12207031
+height = 0.6078186
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xpuf2"]
+albedo_texture = ExtResource("3_ifuhg")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_33cd3"]
+top_radius = 0.14501953
+bottom_radius = 0.14501953
+height = 0.19140625
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c8h10"]
+albedo_texture = ExtResource("3_ifuhg")
+
+[node name="Door" type="Node3D" unique_id=1931128766]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=788489785]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0017547607, -0.25268555, -0.0056197047)
+material_override = SubResource("StandardMaterial3D_f33lw")
+mesh = SubResource("BoxMesh_6rob7")
+
+[node name="Handle" type="Node3D" parent="." unique_id=1145208325]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9731498, 0, 0)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Handle" unique_id=1761235583]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1.5385776, -0.19411993, 0.014175415)
+material_override = SubResource("StandardMaterial3D_5ib4o")
+mesh = SubResource("CylinderMesh_6rob7")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Handle" unique_id=186483875]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1.5367622, -0.19718182, -0.34859407)
+material_override = SubResource("StandardMaterial3D_xpuf2")
+mesh = SubResource("CylinderMesh_33cd3")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Handle" unique_id=1537599867]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1.5367622, -0.19718182, 0.40556598)
+material_override = SubResource("StandardMaterial3D_c8h10")
+mesh = SubResource("CylinderMesh_33cd3")
